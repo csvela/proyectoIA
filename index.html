@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClariCopilot | Asistente académico</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <a href="#" class="brand">
+                <span class="brand-icon">C</span>
+                <span>ClariCopilot</span>
+            </a>
+
+            <p class="tagline">
+                Te ayuda a entender qué tienes que hacer.
+            </p>
+
+            <nav class="navigation">
+                <a href="#inicio" class="nav-link active">
+                    ✦ Entender instrucciones
+                </a>
+                <a href="#resultado" class="nav-link">
+                    ☷ Mi plan de tareas
+                </a>
+            </nav>
+
+            <div class="sidebar-note">
+                <strong>Tu copiloto académico</strong>
+                <p>
+                    Organiza tus instrucciones y convierte
+                    una actividad compleja en pasos claros.
+                </p>
+            </div>
+        </aside>
+
+        <main class="main-content" id="inicio">
+
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">ASISTENTE ACADÉMICO</p>
+                    <h1>Vamos a aclarar tu tarea.</h1>
+                    <p class="subtitle">
+                        Comprende las instrucciones y organiza
+                        lo que necesitas hacer.
+                    </p>
+                </div>
+
+                <span class="version">Prototipo v0.1</span>
+            </header>
+
+            <section class="welcome-banner">
+                <div>
+                    <h2>Menos confusión. Más claridad.</h2>
+                    <p>
+                        Introduce las indicaciones de tu profesor
+                        y obtén una primera organización de tus tareas.
+                    </p>
+                </div>
+                <div class="welcome-icon" aria-hidden="true">✦</div>
+            </section>
+
+            <div class="workspace">
+
+                <section class="card">
+                    <div class="card-heading">
+                        <div>
+                            <h2>1. Tus instrucciones</h2>
+                            <p>
+                                Escribe o pega el texto de tu actividad.
+                            </p>
+                        </div>
+                        <span class="label">ENTRADA</span>
+                    </div>
+
+                    <label for="instructions">
+                        Instrucciones del profesor
+                    </label>
+
+                    <textarea
+                        id="instructions"
+                        placeholder="Pega aquí las instrucciones de tu tarea..."
+                    ></textarea>
+
+                    <div class="button-group">
+                        <button id="analyzeButton" class="button primary">
+                            Organizar instrucciones →
+                        </button>
+
+                        <button id="exampleButton" class="button secondary">
+                            Probar ejemplo
+                        </button>
+
+                        <button id="clearButton" class="button secondary">
+                            Limpiar
+                        </button>
+                    </div>
+
+                    <p class="help-text">
+                        Esta primera versión utiliza reglas básicas
+                        de texto. La API de inteligencia artificial
+                        se integrará posteriormente.
+                    </p>
+                </section>
+
+                <section class="card results-card" id="resultado">
+                    <div class="card-heading">
+                        <div>
+                            <h2>2. Tu plan de acción</h2>
+                            <p>
+                                Aquí aparecerá la información organizada.
+                            </p>
+                        </div>
+                        <span class="label">RESULTADO</span>
+                    </div>
+
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">☷</div>
+                        <strong>Todavía no hay resultados</strong>
+                        <p>
+                            Introduce una actividad y pulsa
+                            “Organizar instrucciones”.
+                        </p>
+                    </div>
+
+                    <div id="results" hidden>
+                        <section class="result-section">
+                            <h3>Objetivo identificado</h3>
+                            <div id="objective" class="result-box"></div>
+                        </section>
+
+                        <section class="result-section">
+                            <h3>Requisitos detectados</h3>
+                            <ul id="requirements" class="requirement-list"></ul>
+                        </section>
+
+                        <section class="result-section">
+                            <h3>Lista de tareas</h3>
+
+                            <div id="taskList" class="task-list"></div>
+
+                            <div class="progress-track">
+                                <div id="progressBar" class="progress-bar"></div>
+                            </div>
+
+                            <div class="progress-info">
+                                <span id="progressText">
+                                    0 tareas completadas
+                                </span>
+                                <span id="progressPercent">0%</span>
+                            </div>
+                        </section>
+
+                        <p id="warning" class="warning"></p>
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="footer">
+                ClariCopilot · Proyecto académico de Ingeniería
+                en Sistemas Computacionales
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
